@@ -6,11 +6,57 @@ body {
 p, h1, h2, h3, h4, h5, h6 {
     margin:10px 0;
 }
+
+//
+// Per flex container
 .flex {
     display: flex;
     display: -ms-flexbox;
     display: -webkit-flexbox;
+
+    // Per flex item
+    .flex-one-one-auto {
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+    .flex-one-zero-auto {
+        -webkit-flex: 1 0 auto;
+        flex: 1 0 auto;
+    }
+    .flex-zero-one-auto {
+        -webkit-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+    // main axis alignment
+    .flexitem-left-main {
+        margin-right:auto; // eats all space to the right, therefore forcing item to the left
+    }
+    .flexitem-right-main {
+        margin-left:auto; // eats all space to the left, therefore forcing item to the right
+    }
+    // cross axis alignment (uses align-self)
+    .flexitem-left-cross {
+        -webkit-align-self: flex-start;
+        align-self: flex-start;
+    }
+    .flexitem-right-cross {
+        -webkit-align-self: flex-end;
+        align-self: flex-end;
+    }
+    .flexitem-center-cross {
+        -webkit-align-self: center;
+        align-self: center;
+    }
+    .flexitem-baseline-cross {
+        -webkit-align-self: baseline;
+        align-self: baseline;
+    }
+    .flexitem-stretch-cross {
+        -webkit-align-self: stretch;
+        align-self: stretch;
+    }
 }
+// Use flex-row or flex-col, rather than the raw .flex rule
 .flex-row {
     .flex;
     -webkit-flex-direction: row;
@@ -21,29 +67,24 @@ p, h1, h2, h3, h4, h5, h6 {
     -webkit-flex-direction:column;
     flex-direction: column;
 }
-.flex-one-one-auto {
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-}
-.flex-one-zero-auto {
-    -webkit-flex: 1 0 auto;
-    flex: 1 0 auto;
-}
-.flex-zero-one-auto {
-    -webkit-flex: 0 1 auto;
-    flex: 0 1 auto;
-}
 .flex-wrap {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+// main axis alignment (uses justify-content)
 .flex-center-main {
     -webkit-justify-content: center;
     justify-content: center;
 }
-.flex-right-main {
-    margin-left: auto;
+.flex-left-main {
+    //    margin-left: auto;
+    justify-content: flex-start;
 }
+.flex-right-main {
+    //    margin-left: auto;
+    justify-content: flex-end;
+}
+// cross axis alignment (uses align-items)
 .flex-center-cross {
     -webkit-align-items: center;
     align-items: center;
@@ -51,13 +92,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .flex-stretch-cross {
     -webkit-align-items: stretch;
     align-items: stretch;
-}
-.flex-align-left {
-    -webkit-align-self: flex-start;
-    align-self: flex-start;
-}
-.flex-align-right {
-    margin-left:auto;
 }
 
 .tac-popover {
@@ -76,10 +110,13 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .tac {
     margin:0 8px;
+    height: 100vh;
+
     .sub-title {
         padding-left:8px;
     }
     .disclaimer {
+        flex: 1 0 0%;
         overflow: auto;
         background-color: white;
         border:1px solid darkgray;
@@ -97,6 +134,8 @@ p, h1, h2, h3, h4, h5, h6 {
 footer {
     margin:0 8px;
     height: 70px;
+//    justify-content: flex-end;
+//    margin-left: auto;
 
     label {margin-right: 20px;}
 }
