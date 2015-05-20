@@ -1,7 +1,7 @@
 .flex {
   display: flex;
   display: -ms-flexbox;
-  display: -webkit-flexbox;
+  display: -webkit-flex;
 }
 .flex .flex-one-one-auto {
   -webkit-flex: 1 1 auto;
@@ -44,7 +44,7 @@
 .flex-row {
   display: flex;
   display: -ms-flexbox;
-  display: -webkit-flexbox;
+  display: -webkit-flex;
   -webkit-flex-direction: row;
   flex-direction: row;
 }
@@ -89,7 +89,7 @@
 .flex-col {
   display: flex;
   display: -ms-flexbox;
-  display: -webkit-flexbox;
+  display: -webkit-flex;
   -webkit-flex-direction: column;
   flex-direction: column;
 }
@@ -140,9 +140,11 @@
   justify-content: center;
 }
 .flex-left-main {
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
 .flex-right-main {
+  -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
 .flex-center-cross {
@@ -184,13 +186,14 @@ h6 {
 }
 .tac {
   margin: 0 8px;
-  height: 100vh;
+  height: 100%;
 }
 .tac .sub-title {
   padding-left: 8px;
 }
 .tac .disclaimer {
   flex: 1 0 0%;
+  flex: 1 0 0;
   overflow: auto;
   background-color: white;
   border: 1px solid darkgray;
