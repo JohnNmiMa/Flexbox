@@ -1,7 +1,4 @@
 .idea/
 *.css
+!main.css
 app/bower_components
-
-*.swp
-
-.gitignore~
