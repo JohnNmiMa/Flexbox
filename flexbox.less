@@ -1,29 +1,62 @@
 //
 // Per flex container
 .flex {
-    display: flex;
-    display: -ms-flexbox;
     display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 
-    // Per flex item
+    // Per flex item alignment
+    .flex-none {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+    }
+    .flex-auto {
+        -webkit-flex: auto;
+        -ms-flex: auto;
+        flex: auto;
+    }
+    .flex-one {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    .flex-two {
+        -webkit-flex: 2;
+        -ms-flex: 2;
+        flex: 2;
+    }
+    .flex-three {
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3;
+    }
+    .flex-four {
+        -webkit-flex: 4;
+        -ms-flex: 4;
+        flex: 4;
+    }
     .flex-one-one-auto {
         -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
         flex: 1 1 auto;
     }
     .flex-one-zero-auto {
         -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
         flex: 1 0 auto;
     }
     .flex-zero-one-auto {
         -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     }
     // main axis alignment
     .flexitem-left-main {
-        margin-right:auto; // eats all space to the right, therefore forcing item to the left
+        margin-right: auto; // eats all space to the right, therefore forcing item to the left
     }
     .flexitem-right-main {
-        margin-left:auto; // eats all space to the left, therefore forcing item to the right
+        margin-left: auto; // eats all space to the left, therefore forcing item to the right
     }
     // cross axis alignment (uses align-self)
     .flexitem-left-cross {
@@ -47,40 +80,57 @@
         align-self: stretch;
     }
 }
+
 // Use flex-row or flex-col, rather than the raw .flex rule
 .flex-row {
     .flex;
     -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
 }
 .flex-col {
     .flex;
-    -webkit-flex-direction:column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
+
+// Per container alignment
+// main axis alignment (uses justify-content)
 .flex-wrap {
     -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-}
-// main axis alignment (uses justify-content)
-.flex-center-main {
-    -webkit-justify-content: center;
-    justify-content: center;
 }
 .flex-left-main {
     -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
 }
 .flex-right-main {
     -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
 }
+.flex-center-main {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.flex-space-between-main {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
 // cross axis alignment (uses align-items)
 .flex-center-cross {
     -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 .flex-stretch-cross {
     -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
 }
