@@ -1,18 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang='en' ng-app="FlexboxApp">
 <head>
     <meta charset="utf-8">
     <title>Flexbox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <!--<link rel="stylesheet/less" type="text/css" href="main.less">-->
-    <!--<script src="less.min.js"></script>-->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--<link rel="stylesheet" href="./css/main.css">-->
+    <link rel="stylesheet/less" type="text/css" href="./css/main.less">
+    <script src="./js/less.min.js"></script>
 </head>
-<body>
+<body ng-controller="FlexboxCtrl">
     <div class="tac-popover flex-col">
         <div class="title flex-row flex-center-cross">
             <h3>Terms and Conditions for this website</h3>
-            <a href="#" class="flexitem-right-main">Cancel</a>
+            <newton-link class="flexitem-right-main" underline="false"
+                         ng-click="openTermsAndConditionsPopover(false)" color="red">Cancel</newton-link>
         </div>
         <content class="tac flex-col">
             <h4 class="sub-title">
@@ -53,6 +55,12 @@
             <label for="agree">I agree to the terms and conditions</label>
             <button>Continue</button>
         </footer>
+    </div>
+
+    <div>
+        <script type="text/javascript" src="./bower_components/angularjs/angular.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+        <script type="text/javascript" src="./js/CommonDirective.js"></script>
     </div>
 </body>
 </html>

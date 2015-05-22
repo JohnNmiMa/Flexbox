@@ -1,0 +1,40 @@
+<div class="newton-link" ng-class="{'underline': data.underline == 'true'}"
+     ng-mousedown="onMouseDown()" ng-mouseup="onMouseUp()" ng-mouseenter="onMouseEnter()"
+     ng-mouseleave="onMouseLeave()" >
+  <div ng-show="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" height="20px" ng-switch on="icon">
+      <g ng-switch-when="unlock">
+        <rect x="4" y="8" class="{{'icon-'+state}}" width="12" height="10"/>
+        <path class="{{'icon-'+state}}" d="M7.9,4.044c0,0,0.412-1.014,2.048-1.014c3.051,0,2.663,3.97,2.663,3.97C13.628,7,14.5,7,14.5,7
+			s0.483-5.567-4.6-5.567c-3.067,0-3.757,1.879-3.757,1.879L7.9,4.044z"/>
+        <g>
+          <circle fill="#FFFFFF" cx="10.057" cy="12.055" r="0.921"/>
+          <polygon fill="#FFFFFF" points="9.75,11.967 9.222,15.673 10.846,15.629 10.408,12.165 			"/>
+        </g>
+      </g>
+
+      <g ng-switch-when="lock">
+        <rect x="4" y="8" class="{{'icon-'+state}}" width="12" height="10"/>
+        <path class="{{'icon-'+state}}" d="M5.204,7h2.033c0,0-0.338-3.97,2.711-3.97c3.051,0,2.663,3.97,2.663,3.97C13.628,7,14.5,7,14.5,7
+			s0.483-5.567-4.6-5.567C4.913,1.433,5.204,7,5.204,7z"/>
+        <g>
+          <circle fill="#FFFFFF" cx="10.057" cy="12.055" r="0.921"/>
+          <polygon fill="#FFFFFF" points="9.75,11.967 9.222,15.673 10.846,15.629 10.408,12.165 			"/>
+        </g>
+      </g>
+
+      <g ng-switch-when="delete">
+        <line class="{{'icon-'+state}}" fill="none" stroke="#E67263" stroke-width="0.901" stroke-miterlimit="10" x1="5" y1="5" x2="15" y2="14.132"/>
+        <line class="{{'icon-'+state}}" fill="none" stroke="#E67263" stroke-width="0.901" stroke-miterlimit="10" x1="5" y1="14.132" x2="15" y2="5"/>
+      </g>
+
+      <g ng-switch-when="schedule_delete">
+        <line class="{{'icon-'+state}}" fill="none" stroke="#ffffff" stroke-width="0.901" stroke-miterlimit="10" x1="5" y1="5" x2="15" y2="14.132"/>
+        <line class="{{'icon-'+state}}" fill="none" stroke="#ffffff" stroke-width="0.901" stroke-miterlimit="10" x1="5" y1="14.132" x2="15" y2="5"/>
+      </g>
+
+    </svg>
+  </div>
+  <p class="{{data.color+'-link-'+state}}" ng-transclude>
+  </p>
+</div>

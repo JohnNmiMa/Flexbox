@@ -1,0 +1,197 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+@application-min-width:   1024px;
+
+@medium-left-items-width: 60px;
+
+// Typography
+// -------------------------
+@sansFontFamily:        'Arimo', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+
+@baseFontSize:          12px;
+@title-bar-font-size:   14px;
+@baseFontFamily:        @sansFontFamily;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+// basic color
+// -------------------------
+@black:                 #000;
+@white:                 #fff;
+@red:                   #E67263;
+
+
+@help-text-color:         #6a747d;
+@common-black-color:      #4f4e59;
+@common-blue-color:       #3A8FCB;
+@common-gray-color:       #F1F3F5;
+@common-red-color:        #e67263;
+@common-border-color:     #CCD3D8;
+@common-active-color:     #E8EbEd;
+@medium-lefNav-color:     #CCD3D8;
+@medium-left-blue-color:     #02768A;
+@common-dull-red-color:     #af4454;
+@common-dull-red-light-color: #f5696c;
+@common-disabled-color:   #A9A9A9;
+@common-deny-color:   #9C150F;
+@common-orange-color:         #ed711e;
+@common-yellow-color:        #f6d64b;
+@common-yellow-border-color: #d3b840;
+@common-green-color:         #5B9A84;
+@drop-down-background-color: #F1F3F5;
+@common-title-bar-text-color: #5b5a68;
+@common-gray-badge-color: #8893a0;
+@main-panel-background-color:    #f9f9f9;
+
+@approval-gray-color: @drop-down-background-color;
+
+@dark-menu-font-color: #FFFFFF;
+@dark-menu-disabled-font-color: #C1C1C1;
+@dark-menu-rollover-bg-color: #343341;
+
+@red-button-bg-color: #FC395F;
+@red-button-bg-hover-color: #db3357;
+@blue-button-bg-color: #3498DB;
+
+@common-font-size-line-height:    14px;
+@common-line-height:              30px;
+@common-title-bar-height:         35px;
+@common-title-height:             40px;
+@medium-lefNav-padding:           10px;
+@medium-lefNav-icon-width:        40px;
+@medium-lefNav-content-width:     250px;
+@baseLineHeight:        20px;
+@baseBorderRadius:      0px;
+// Z-index master list
+// -------------------------
+@zindexHomeBar:          9;
+@zindexLeftItem:          990;
+@zindexLeftCloseButton:   999;
+@zindexDropdown:          1999;
+@zIndexMaskDiv:           2000;
+
+// Dropdowns
+// -------------------------
+@dropdownBackground:            #ffffff;
+@dropdownBorder:                #ccd3d8;
+@dropdownDividerTop:            #e5e5e5;
+@dropdownDividerBottom:         @common-black-color;
+
+@dropdownLinkColor:             @linkColor;
+@dropdownLinkColorHover:        #3498db;
+@dropdownLinkBgColorHover:      #ebf1f5;
+
+@dropdownLinkColorActive:       #15547d;
+@dropdownLinkBgColorActive:     #e0e8ed;
+
+
+@dropdownLinkBackgroundActive:  @common-active-color;
+@dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+
+@dropdownBorderColor:           #8893A0;
+
+// Links
+// -------------------------
+@linkColor:             #3498DB;
+@linkHoverColor:        #88bde5;
+@linkActiveColor:       #15547D;
+@linkDisabledColor:     #afb5ba;
+@linkVisitedColor:      #9b59b6;
+
+// Navbar
+@navbarHeight:          40px;
+@navbarBorder:          @navbarBackground;
+@navbarLinkColor:       #777;
+@navbarBackground:      #3c4452;
+@navbarLinkColorActive:           @common-black-color;
+@navbarLinkBackgroundActive:      #252b33;
+@navbarSubMenuOver:      #54a7de;
+@navbarSubMenuDown:      #1b6ea6;
+@personalMenuItemOver:    @navbarLinkBackgroundActive;
+@personalMenuItemDown:    #404354;
+@brandTextColor:          #98a0b0;
+@navbarDivideLineColor:   #808080;
+
+// Navbar
+@home-title-barHeight:          @common-title-bar-height;
+@home-title-barBorder:          @home-title-barBackground;
+@home-title-barLinkColor:       #777;
+@home-title-barBackground:      @white;
+@home-title-barLinkColorActive:           @white;
+@home-title-barLinkBackgroundActive:      #8893a0;
+
+//approval title bar
+@approval-barHeight:          30px;
+@approval-padding:            12px;
+@approvalBackgroundColor:     @common-gray-color;
+
+// newton from
+@newtonFormInputHeight: 30px;
+
+@x-small-gap: 6px;
+@small-gap: 8px;
+@middle-gap: 12px;
+@homepage-gap: 10px;
+@large-gap: 16px;
+
+// Newton Button
+@large-button-size: 60px;
+@avatar-icon-size: 40px;
+
+@lightGreenColor:        #C6DE64;
+@darkGreenColor:         #8A9D43;
+@lightRedColor:          #E7594A;
+@darkRedColor:           #9B2519;
+
+@over-color: #44444e;
+@duplicate-bg-color:#FFD200;
+@duplicate-color:#B79800;
+
+@privateCommentPopoverWidth: 700px;
+
+@model-popover-mask-bg-color: rgba(255, 255, 255, 0.4);
+
+@modal-z-index: 100;
+
+@mbp-menu-font-size: 16px;
+@mbp-header-height: 28px;
+
+@sbp-icon-up-fill: #4F5366;
+@common-icon-fill: #FFFFFF;
+@common-icon-stroke: #FFFFFF;
+
+@icon-width: 20px;
+
+@home-title-bar-height: 40px;
+@home-bottom-bar-height: 32px;
+
+@integration-company-select-width: 250px;
+
+@email-popover-min-width: 600px;
+@email-popover-min-height: 500px;
+@email-popover-not-send-min-height: 262px;
+
+@link-default-font-size-sbp: 16px;
+
+// User picker
+@user-item-space: 11px;
+@user-picker-bg-color: #fcfcfc;
+@user-picker-label-color: #cacfd3;
+@common-schedule-border-radius: 2px;
+
+// promote jobs
+@promote-jobs-popover-min-width: 950px;
+@promote-jobs-popover-min-height: 500px;
+
+// terms and conditions popover
+@terms-and-conditions-min-width: 920px;
+@terms-and-conditions-min-width: 470px;

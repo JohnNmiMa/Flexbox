@@ -1,0 +1,1161 @@
+@header-height: 40px;
+@basic-bar-height: 40px;
+@footer-height: 20px;
+@large-font: 18px;
+@normal-font: 12px;
+@over-large-gap: 20px;
+@normal-gap: 12px;
+@small-gap: 8px;
+@general-font: 12px;
+@white: #ffffff;
+@bar-color: #3c4452;
+@black-button-up-color: #3c4452;
+@black-button-over-color: #252b33;
+@gray-container-bg-color: #f1f3f5;
+@disabled-button-bg-color: #afb5ba;
+
+// view interview scheduling bar
+@accepted-bar-color: #197749;
+@accepted-bar-hover-color: #23a162;
+@decline-bar-color: #b11812;
+@decline-bar-hover-color: #c51b15;
+@meeting-failed-warning-color: #db3357;
+@meeting-failed-warning-hover-color: #fc395f;
+
+// Step 2 page
+@time-info-font-size: 18px;
+@location-info-font-size: 12px;
+@name-info-font-size: 14px;
+@attendee-info-font-size:12px;
+@meeting-container-bottom-padding: 30px;
+@meeting-container-left-padding: 20px;
+
+@attendee-info-line-height: 20px;
+@attendee-info-left-padding: 20px;
+@attendee-info-top-padding: 5px;
+@attendee-title-left-margin:3px;
+@meeting-info-top-margin: 25px;
+
+@option-part-color: #fcfcfc;
+@divide-line-color: #e0e0e0;
+
+.inline-block() {
+  display: inline-block;
+}
+
+.float-left() {
+  float: left;
+}
+
+.float-right() {
+  float: right;
+}
+
+.cursor-pointer() {
+  cursor: pointer;
+}
+
+.black-button() {
+  .float-left();
+  .cursor-pointer();
+  height: 20px;
+  color: @white;
+  line-height: 20px;
+  margin: 8px 10px 8px 5px;
+  padding: 3px 10px;
+  background-color: @bar-color;
+  border-radius: @common-schedule-border-radius;
+  &:hover {
+    background-color: @black-button-over-color;
+  };
+  &:active {
+    background-color: @black-button-over-color;
+  }
+}
+
+.interviewer-button() {
+  .float-left();
+  .cursor-pointer();
+  height: 20px;
+  color: @white;
+  line-height: 20px;
+  margin: 8px 7px 0 5px;
+  padding: 3px 10px;
+  border-radius: @common-schedule-border-radius;
+}
+
+.inputStyle(@width) {
+  input {
+    .time-text();
+    .cursor-pointer();
+    width: @width;
+    padding: 0;
+    text-indent: 0;
+    outline: none;
+    background-color: #f0f8fc;
+    border: 1px solid #ccd3d8;
+    .box-sizing();
+    border-radius: @common-schedule-border-radius;
+    height: 26px;
+  }
+
+  input:hover {
+    color:  #0C5D94;
+  }
+}
+
+.time-text() {
+  font-size: 12px;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.chosen-dropdown(){
+  .chosen-container{
+    position: absolute;
+    .chosen-drop{
+      border-top: 1px solid #ccd3d8;
+    }
+  }
+  .chosen-single{
+    display: none;
+  }
+  .chosen-container-single .chosen-single {
+    height: 25px;
+    line-height: 24px;
+    .box-sizing();
+    div{
+      top: 0px;
+    }
+  }
+}
+
+.scheduling-main{
+  position: fixed;
+  width: 1000px;
+  right: 10px;
+  bottom: 0;
+  background: @white;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+
+  .mCSB_dragger_bar{
+    z-index: @zIndexMaskDiv;
+  }
+
+  .auto-save-section-bgcolor {
+    background-color: #f6d64b;
+  }
+
+  .scheduling-header-bar{
+    height: @header-height;
+    background-color: @gray-container-bg-color;
+    border-bottom: 1px solid @common-border-color;
+    .box-sizing();
+
+    .expand-icon {
+      display: inline-block;
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 12px;
+
+      .expand-svg {
+        vertical-align: middle;
+        margin-right: 10px;
+        margin-bottom: 4px;
+        cursor: pointer;
+        .expand-line {
+          stroke: @linkColor;
+        }
+      }
+    }
+
+    .header-left{
+      .float-left();
+      height: 100%;
+      .candidate-name{
+        .float-left();
+        font-size: @large-font;
+        line-height: @header-height;
+      }
+//      .line{
+//        .float-left();
+//        height: 30px;
+//        background-color: #ffffff;
+//        margin-top: 15px;
+//        margin-left: 10px;
+//        margin-right: 10px;
+//      }
+      .stage-info{
+        .float-left();
+        line-height: @header-height;
+        margin-left: 20px;
+      }
+
+    }
+    .header-right{
+      .float-right();
+      height: 100%;
+      .right-link{
+        .inline-block();
+        .float-right();
+
+        font-size:@normal-font;
+        /*font-weight: bold;*/
+        line-height: @header-height;
+        margin-right: @normal-gap;
+        .button-container{
+          .cursor-pointer();
+        }
+        &.close{
+          margin-right: 32px !important;
+        }
+      }
+//      .hamburger{
+//        margin-right: 0 !important;
+//        .newton-icon{
+//          padding-top: 10px;
+//        }
+//        .newton-icon.bg-up{
+//          background-color: @black-button-up-color;
+//        }
+//        .newton-icon.bg-over{
+//          background-color: @black-button-up-color;
+//        }
+//      }
+    }
+  }
+
+  .scheduling-container {
+    position: absolute;
+    top: @header-height;
+    left: 0;
+    right: 0;
+    bottom: @footer-height;
+
+    .build-schedule {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      .interview-time-bar{
+        height: 42px;
+        .interview-time-info{
+          .inline-block();
+          width: 100%;
+          line-height: 42px;
+          height: 100%;
+
+          .interview-title{
+            .inline-block();
+            .float-right();
+            font-size: 18px;
+            height: 100%;
+            line-height: 42px;
+          }
+
+          .time-select {
+            .inline-block();
+            .float-right();
+            .inputStyle(65px);
+            margin-left: @small-gap;
+            height: 100%;
+            line-height: 42px;
+          }
+          .date-select {
+            .inline-block();
+            .float-right();
+            .inputStyle(90px);
+            margin-left: @small-gap;
+            height: 100%;
+            line-height: 42px;
+          }
+          .time-zone{
+            .float-right();
+            margin-left: @over-large-gap;
+            margin-right: 80px;
+            height: 100%;
+            line-height: 42px;
+            .chosen-dropdown();
+            .chosen-container{
+              top: 35px;
+              right: 75px;
+            }
+          }
+        }
+      }
+
+      .meeting-body{
+        margin-top: -2px;
+      }
+    }
+
+    .send-invites {
+      height: 100%;
+      position: relative;
+      .send-invites-popover {
+        position: absolute;
+        bottom: 5px;
+        top: 5px;
+        right: 10px;
+        left: 10px;
+       /* border: 1px solid @common-border-color;*/
+        .invites-part {
+          .invite-date-bar {
+            height: 40px;
+            border-bottom: 1px solid  @divide-line-color;
+            box-sizing: border-box;
+            padding-left: 10px;
+            margin: 0 5px;
+            .action-link-park {
+              display: inline-block;
+              float: right;
+              height: 40px;
+              line-height: 40px;
+            }
+            .action-link {
+              padding: 0 10px;
+            }
+            .send-invites-button {
+              float: right;
+              margin: 5px 10px 5px 5px;
+              padding: 5px 10px;
+              height: 20px;
+              line-height: 20px;
+              background-color: @active-fill;
+              color: @white;
+              font-size: 12px;
+              font-weight: bold;
+              cursor: pointer;
+              border-radius: @common-schedule-border-radius;
+              &:hover {
+                background-color: @active-dark-fill;
+              };
+              &:active {
+                background-color: @active-dark-fill;
+              }
+            }
+
+            .send-update-button-disabled {
+              background-color: #ccd3d8 ! important;
+            }
+
+            .invite-date-info {
+              line-height: 40px;
+              font-size: @time-info-font-size;
+              display: inline-block;
+            }
+            .invite-time-zone {
+              display: inline-block;
+              height: 40px;
+              line-height: 38px;
+              padding-left: 10px;
+              .time-zone-select {
+                display: inline-block;
+                .chosen-dropdown();
+                .chosen-container{
+                  top: 35px;
+                  left: 230px;
+                }
+              }
+            }
+          }
+          .invites-info-container {
+            padding: 0 0 @meeting-container-bottom-padding @meeting-container-left-padding;
+          }
+          .invite-info {
+            margin-top: @meeting-info-top-margin;
+            position: relative;
+            .invite-location {
+              color: @help-text-color;
+              font-size: @location-info-font-size;
+              padding: @attendee-info-top-padding 0 @attendee-info-top-padding @attendee-info-left-padding;
+            }
+            .attendee-info {
+              font-size: @attendee-info-font-size;
+              padding-left: @attendee-info-left-padding;
+              line-height: @attendee-info-line-height;
+              .attendee-title {
+                padding-left: @attendee-title-left-margin;
+              }
+            }
+            .attendee-status {
+              margin-left: 5px;
+              &.accept-text {
+                color: white;
+                background-color: @accepted-bar-color;
+                padding: 2px;
+                font-size: 11px;
+                cursor: default;
+              }
+              &.decline-text {
+                color: white;
+                background-color: @decline-bar-color;
+                padding: 2px;
+                font-size: 11px;
+                cursor: default;
+              }
+              &.tentative-text {
+                //              color: #02DF82;
+              }
+            }
+            .title-selected {
+              background-color: @common-blue-color;
+              .blue-link-up, .blue-link-over, .blue-link-down {
+                color: #ffffff;
+              }
+            }
+            .invite-time-info {
+              font-size: @time-info-font-size;
+              .time-info {
+                margin: 5px;
+              }
+              .meeting-failed-text {
+                position: relative;
+                color: white;
+                background-color: @meeting-failed-warning-color;
+                padding: 2px;
+                font-size: 11px;
+                top: -2px;
+              }
+            }
+            .invite-templates {
+              position: absolute;
+              left: 250px;
+              top: -10px;
+              height: 100%;
+              .choose-template-title {
+                display: inline-block;
+              }
+              .choose-templates {
+                display: inline-block;
+                margin: 5px;
+                width: 245px;
+
+                .template-lbl-container {
+                  margin-top: 8px;
+                }
+              }
+              .preview-invite {
+                display: inline-block;
+                margin-right: 15px;
+              }
+              .incomplete-token {
+                position: absolute;
+                color: #C0392B;
+                left: 90px;
+                cursor: default;
+                .token-warning-icon {
+                  position: relative;
+                  top: 1px;
+                  .icon-fill {
+                    fill: #C0392B;
+                  }
+                  &:hover {
+                    .icon-fill {
+                      fill: #E05748;
+                    }
+                  }
+                  &:active {
+                    .icon-fill {
+                      fill: #9C150F;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .all-options-part {
+          margin:0 10px;
+          background-color: @option-part-color;
+          border: 1px solid @common-border-color;
+          .feedback-request-part {
+            margin: 10px;
+            .send-feedback-title {
+              margin-bottom: 10px;
+            }
+            .send-feedback-text {
+              display: inline-block;
+              .feedback-time-select {
+                display: inline-block;
+                line-height: 20px;
+                .feedback-time-choose();
+                .drop-down .drop-down-item {
+                  line-height: 20px;
+                }
+
+              }
+            }
+            .send-feedback-preview {
+              margin-left: 10px;
+            }
+            .about-icon-container {
+              display: block;
+              margin-left: 24px;
+              margin-top: 0;
+              height: 20px;
+              line-height: 20px;
+              cursor: pointer;
+              width: 85px;
+              .learn-more-link {
+                position: relative;
+                top: -1px;
+              }
+            }
+          }
+          .other-options-part {
+            border-top: 1px solid @divide-line-color;
+            margin: 10px;
+            padding-top: 15px;
+
+
+            .other-option {
+              margin-right: 10px;
+            }
+            .options-part {
+              .options-checkbox {
+                margin: 10px 0;
+              }
+            }
+          }
+        }
+
+        .auto-save {
+          margin:0 10px;
+          margin-top: 10px;
+          background-color: @option-part-color;
+          border: 1px solid @common-border-color;
+
+          .auto-save-item {
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            padding-left: 10px
+          }
+        }
+      }
+
+      .feedback-request-popover-body{
+        min-height: 460px;
+      }
+    }
+
+    &.scheduling-container-collapse {
+      display: none;
+    }
+  }
+
+  .scheduling-footer-bar{
+    height: @footer-height;
+    background-color: @gray-container-bg-color;
+    .box-sizing();
+    border-top: 1px solid @common-border-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .footer-left{
+      .float-left();
+      height: 100%;
+      line-height: @footer-height;
+      margin-left: @normal-gap;
+    }
+    .footer-right{
+      .float-right();
+      height: 100%;
+      line-height: @footer-height;
+      margin-right: @normal-gap;
+    }
+
+    &.scheduling-footer-bar-collapse {
+      display: none;
+    }
+  }
+
+  // Add title popover.
+  .add-title-popover {
+    position: fixed;
+    .popover-shadow();
+    background-color: #ffffff;
+    width: 250px;
+    cursor: default;
+    .red-link-disabled {
+      cursor: default;
+    }
+    .popover-title-bar {
+      white-space: normal !important;
+      cursor: default;
+      .left-link {
+        margin-right: 12px;
+      }
+    }
+    .add-title-text {
+      height: 30px;
+      line-height: 30px;
+      padding-left: 12px;
+    }
+    .add-title-input {
+      margin: 0 12px;
+      input {
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+    .add-title-radio {
+      padding: 10px 10px 10px 20px;
+      .use-once-radio {
+        margin-top: 10px;
+      }
+      .radio-explain-text {
+        font-size: 11px;
+        padding-left: 21px;
+      }
+    }
+  }
+
+  &.scheduling-main-expend {
+    top: 20px;
+  }
+
+  &.scheduling-main-collapse {
+    height: 40px;
+    bottom: 10px;
+    width: 500px;
+  }
+
+}
+
+.build-interview-teams-main{
+  position: fixed;
+  top: 20px;
+  width: 1000px;
+  right: 10px;
+  bottom: 0;
+  background: @white;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+  .interview-header-bar{
+    height: @header-height;
+    background-color: @gray-container-bg-color;
+    .box-sizing();
+    border-bottom: 1px solid @common-border-color;
+    .header-left{
+      .float-left();
+      height: 100%;
+      .header-desc{
+        .float-left();
+        font-size: 14px;
+        line-height: @header-height;
+        padding-left: @normal-gap;
+      }
+    }
+    .header-right{
+      .float-right();
+      height: 100%;
+      .right-link{
+        .inline-block();
+        .float-right();
+        font-size: @general-font;
+        line-height: @header-height;
+        margin-right: @normal-gap;
+        .button-container{
+          .cursor-pointer();
+        }
+        &.close{
+          margin-right: 32px !important;
+        }
+      }
+    }
+  }
+  .interview-footer-bar{
+    height: @footer-height;
+    background-color: @gray-container-bg-color;
+    .box-sizing();
+    border-top: 1px solid @common-border-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .build-schedule-teams{
+    .interview-option{
+      &.create-mode{
+        margin-top: 10px;
+      }
+      .team-info{
+        .float-left();
+        width: 100%;
+        height: 42px;
+        line-height: 52px;
+        .team-name-title{
+          .float-left();
+          margin-left: 90px;
+        }
+        .team-name{
+          margin-left: @normal-gap;
+          .float-left();
+          font-weight: bold;
+        }
+        .team-delete{
+          margin-left: @normal-gap;
+          .float-left();
+          font-weight: bold;
+        }
+      }
+      .interview-time{
+        .float-left();
+        width: 100%;
+        height: 48px;
+        line-height: 40px;
+        .inputStyle(65px);
+        .time-desc{
+          .float-left();
+          margin-left: 90px;
+        }
+        .time-select {
+          .float-left();
+          margin-left: @normal-gap;
+          margin-top: 7px;
+        }
+      }
+
+      .privacy{
+        .float-left();
+        width: 100%;
+        .privacy-desc{
+          .float-left();
+          margin-left: 90px;
+        }
+        .privacy-option{
+          .float-left();
+          margin-left: @normal-gap;
+        }
+      }
+
+    }
+    .meeting-body{
+      position: absolute;
+      top: 130px;
+      bottom: 20px;
+      right: 0;
+      left: 0;
+
+      &.modify-mode{
+        top: 160px !important;
+      }
+      .meeting-container{
+        min-height: 44px;
+        overflow-x: hidden;
+      }
+    }
+  }
+}
+
+.save-interview-team {
+  background-color: @white;
+  border-color: @common-border-color;
+  border-style: solid;
+  border-width: 1px;
+  width: 400px;
+  min-width: 400px;
+  min-height: 158px;
+  .box-sizing();
+  .popover-shadow;
+
+  .header{
+    height: @basic-bar-height;
+    line-height: @basic-bar-height;
+    cursor: move;
+    span {
+      .inline-block();
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 210px;
+    }
+    .title{
+      margin-left: 18px;
+    }
+    .right-link {
+      height: 100%;
+      .float-right();
+      .inline-block();
+      cursor: pointer;
+      font-size: 12px;
+      margin-right: 12px;
+    }
+  }
+  .container{
+    background-color: @gray-container-bg-color;;
+    border-top: 1px solid @common-border-color;
+    border-bottom: 1px solid @common-border-color;
+    .box-sizing();
+    padding-top: 20px;
+    .name-desc{
+       .float-left();
+      margin-left: 18px;
+      height: 30px;
+      line-height: 30px;
+    }
+    .team-name{
+      margin-left: @normal-gap;
+      width: 250px;
+      padding-right: 20px;
+    }
+    input {
+      &.invalid-highlight {
+        border-color: #e67263 !important;
+        background-color: #fbf5ec !important;
+      }
+    }
+    .input-clear-icon .clear-icon {
+      bottom: 2px;
+      left: 325px;
+      .newton-link {
+        .icon-over, .icon-down {
+          stroke : #b02010;
+        }
+      }
+    }
+    .privacy{
+      padding: 15px 0 15px 18px;
+      .privacy-desc{
+        display: inline-block;
+        padding-left: 27px;
+      }
+      .privacy-option{
+        display: inline-block;
+        margin-left: 6px;
+      }
+    }
+  }
+  .footer{
+    height: 20px;
+  }
+}
+
+.schedule-meeting-main{
+  border-radius: @common-schedule-border-radius;
+  border: 1px solid @common-border-color;
+  .box-sizing();
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  background-color: @gray-container-bg-color;
+  .schedule-meeting{
+    width: 100%;
+    min-height: 44px;
+    line-height: 42px;
+    border-radius: @common-schedule-border-radius;
+    .inline-block();
+    margin-bottom: -5px;
+
+    .sort-button{
+      .float-left();
+      .sort-button-down {
+        .cursor-pointer();
+        position: relative;
+        top: 5px;
+        left: 7px;
+        display: inline-block;
+        margin-bottom: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        border-color: gray transparent;
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        height: 0;
+        width: 0;
+      }
+
+      .sort-button-up {
+        .cursor-pointer();
+        position: relative;
+        top: -5px;
+        left: 20px;
+        display: inline-block;
+        margin-bottom: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        border-color: gray transparent;
+        border-style: solid;
+        border-width: 0 5px 5px 5px;
+        height: 0;
+        width: 0;
+      }
+    }
+    .sort-num{
+      .float-left();
+      width: 50px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 14px;
+    }
+    .attendee-container{
+      .float-left();
+    }
+    .interviewer{
+      .float-left();
+      .interviewer-button();
+      &.color1{
+        background-color:#6C7A89; ;
+      }
+      &.color2{
+        background-color:#95A5A6 ;
+      }
+      &.color3{
+        background-color:#4DAF7C ;
+      }
+      &.color4{
+        background-color:#049372 ;
+      }
+      &.color5{
+        background-color:#52B3D9 ;
+      }
+      &.color6{
+        background-color:#67809F ;
+      }
+      &.color7{
+        background-color:#F1A9A0 ;
+      }
+      &.color8{
+        background-color:#E26A6A ;
+      }
+      .user-name{
+        .inline-block();
+        .float-left();
+        position: relative;
+      }
+      .remove-attendee{
+        .newton-link svg{
+          top: 0;
+          .icon-up {
+            stroke : #FFFFFF;
+          }
+          .icon-over, .icon-down {
+            stroke : #E55B50;
+          }
+        }
+      }
+    }
+    .add-interviewer-button{
+      .float-left();
+      .black-button();
+    }
+    .add-interviewers{
+      .float-left();
+      margin-left: 8px;
+    }
+
+    .meeting-time-info{
+      .float-right();
+      width: 55px;
+      margin-left: 18px;
+      color: @linkDisabledColor;
+    }
+    .meeting-time{
+      width: 90px;
+      margin-left: 8px;
+      margin-right: 10px;
+      display: inline-block;
+      .float-right();
+      input {
+        width:100% !important;
+        text-indent: 8px;
+        border: 1px solid #ccd3d8;
+        .box-sizing();
+        border-radius: @common-schedule-border-radius;
+        height: 26px;
+      }
+      .drop-down {
+        position: absolute;
+        z-index: @zIndexMaskDiv;
+        background-color: white;
+        border: 1px solid @common-border-color;
+        max-height: 200px;
+        width: 90px;
+        .drop-down-item {
+          width: 100%;
+          display: block;
+          margin-left: 0;
+          padding:4px 0 4px 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-align: left;
+          height: 15px;
+          line-height: 15px;
+          color: black;
+          text-indent: 12px;
+        }
+        .drop-down-item:hover {
+          color: #ffffff;
+          background-color: @linkColor;
+          cursor: pointer;
+        }
+        &.remove-border {
+          border: none;
+        }
+      }
+      .minute-selected {
+        color: @white !important;
+        background-color: @linkColor !important;
+      }
+      .options {
+        display: none;
+      }
+      &.open > .options {
+        display: block;
+      }
+
+    }
+
+    .meeting-location {
+      width: 180px;
+      margin-left: 8px;
+      .float-right();
+      input {
+        width:100% !important;
+        text-indent: 8px;
+        border: 1px solid #ccd3d8;
+        .box-sizing();
+        border-radius: @common-schedule-border-radius;
+        height: 26px;
+      }
+      .drop-down {
+        position: absolute;
+        z-index: @zIndexMaskDiv;
+        background-color: white;
+        border: 1px solid @common-border-color;
+        max-height: 200px;
+        width: 180px;
+        .drop-down-item {
+          width: 100%;
+          display: block;
+          margin-left: 0;
+          padding: 4px 0 4px 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-align: left;
+          height: 15px;
+          line-height: 15px;
+          color: black;
+          text-indent: 12px;
+        }
+        .drop-down-item:hover {
+          color: #ffffff;
+          background-color: @linkColor;
+          cursor: pointer;
+        }
+        &.remove-border {
+          border: none;
+        }
+      }
+      .minute-selected {
+        color: @white !important;
+        background-color: @linkColor !important;
+      }
+      .options {
+        display: none;
+      }
+      &.open > .options {
+        display: block;
+      }
+
+
+    }
+/*    .meeting-location{
+      width: 180px;
+      border: 1px solid #ccd3d8;
+      .box-sizing();
+      border-radius: @common-schedule-border-radius;
+      .float-right();
+      margin-top: 7px;
+      margin-bottom: 8px;
+      margin-left: 8px;
+      height: 26px;
+    }*/
+    .meeting-delete{
+      margin-left: 10px;
+      margin-right: 10px;
+      .float-right();
+      .newton-link svg{
+        top: 6px;
+        .icon-disabled {
+          stroke : @disabled-button-bg-color;
+        }
+        .icon-over, .icon-down {
+          stroke : #b02010;
+        }
+      }
+    }
+
+
+   .options {
+     display: none;
+   }
+   &.open > .options {
+     display: block;
+   }
+
+     .recent-locations-container {
+          position: relative ;
+          float:right;
+
+
+           .recent-locations {
+             position: absolute;
+             width: 400px;
+             background-color: white;
+             li {
+               padding: 5px 0 10px 10px;
+               height: 15px;
+               line-height: 20px;
+               border: 1px solid white;
+               cursor: pointer;
+             }
+             li:focus, li:hover, li:active, .active-item {
+               outline: 0;
+               background-color: rgba(204, 211, 216, 0.09);
+               border: 1px solid rgba(204, 211, 216, 0.35);
+             }
+           }
+     }
+  }
+}
+
+.add-meeting-button-container-bar{
+  height: 42px;
+  margin-left: 82px;
+  margin-right: 30px;
+  .load-team-link, .save-team-link {
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    margin: 0 10px;
+  }
+
+  .add-meeting-button {
+    .black-button();
+    .float-left();
+    margin-top: 8px;
+    &.disabled{
+      background-color: @disabled-button-bg-color;
+    }
+  }
+
+
+}
+
+.calendar{
+  margin-left: 8px;
+  margin-right: 8px;
+  .fc-toolbar .fc-center{
+    margin-top: 2px;
+  }
+}
