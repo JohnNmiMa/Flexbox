@@ -13627,18 +13627,20 @@ h6 {
 .title {
   background-color: white;
   padding: 16px;
+  height: 45px;
 }
 .title h3 {
   margin: 0;
 }
 .tac {
   margin: 0 8px;
-  height: 100%;
+  height: 355px;
 }
 .tac .sub-title {
   padding-left: 8px;
 }
 .tac .disclaimer {
+  height: 323px;
   overflow: auto;
   background-color: white;
   border: 1px solid darkgray;
@@ -13662,7 +13664,7 @@ footer label {
 }
 @media (min-width: 580px) and (max-width: 1024px) {
   .tac-popover {
-    width: 580px!important;
+    width: 580px !important;
   }
 }
 @media (max-width: 579px) {
@@ -13672,5 +13674,8 @@ footer label {
   .tac-popover {
     width: 100%;
     height: 100vh;
+  }
+  .tac {
+    height: 100%;
   }
 }
