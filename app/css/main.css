@@ -13637,9 +13637,12 @@ h6 {
 }
 .tac .sub-title {
   padding-left: 8px;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
 }
 .tac .disclaimer {
   flex: 1 0 0;
+  -ms-flex: 1 0 0;
   overflow: auto;
   background-color: white;
   border: 1px solid darkgray;
@@ -13660,6 +13663,11 @@ footer {
 }
 footer label {
   margin-right: 20px;
+}
+@media (min-width: 580px) and (max-width: 1024px) {
+  .tac-popover {
+    width: 580px!important;
+  }
 }
 @media (max-width: 579px) {
   body {
